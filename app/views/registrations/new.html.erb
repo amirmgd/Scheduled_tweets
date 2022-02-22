@@ -1,0 +1,20 @@
+<h1>ثبت نام</h1>
+
+<%= form_with model: @user, url: sign_up_path do |form| %>
+    <div class="mb-3">
+        <%= form.label :ایمیل %>
+        <%= form.text_field :email, class: "form-control", placeholder: "shop@example.com" %>
+    </div>
+    <div class="mb-3">
+        <%= form.label :"رمز ورود" %>    
+        <%= form.password_field :password, class: "form-control", placeholder: "رمز ورود" %>
+    </div >
+    <div class="mb-3">
+        <%= form.label :"تکرار رمز ورود" %>
+        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "رمز ورود" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "ثبت نام" , class:"btn btn-primary" %>
+    </div>
+<% end %>
