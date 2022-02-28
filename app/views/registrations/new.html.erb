@@ -1,6 +1,6 @@
 <h1>ثبت نام</h1>
 
-<%= form_with model: @user, url: sign_up_path do |form| %>
+<%= form_with model: @user, url: sign_up_path,data: { turbo: false } do |form| %>
     <% if @user.errors.any? %>
         <div class="alert alert-danger">
             <% @user.errors.full_messages.each do |message| %>
@@ -22,6 +22,6 @@
     </div>
 
     <div class="mb-3">
-        <%= form.submit "ثبت نام" ,data: { turbo: false }, class:"btn btn-primary" %>
+        <%= form.submit "ثبت نام" , class:"btn btn-primary" %>
     </div>
 <% end %>
