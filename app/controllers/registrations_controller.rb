@@ -7,7 +7,7 @@ class RegistrationsController < AboutController
         @user = User.new(user_params)
         if @user.save
             session[:user_id] = @user.id
-            redirect_to root_path, message: "ثبت نام با موفقیت انجام شد"
+            redirect_to root_path, notice: "ثبت نام با موفقیت انجام شد"
         else
             render :new
         end
