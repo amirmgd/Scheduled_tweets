@@ -1,18 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #e3f2fd;">
   <div class="container-fluid">
-    <%= link_to "نوار", root_path,class: "navbar-brand"%>
+    <%= link_to "توییت", root_path,class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <%= link_to "خانه", root_path,class: "nav-link"%>
+          <%= link_to "صفحه اول", root_path,class: "nav-link"%>
         </li>
         <li class="nav-item">
           <%= link_to  "درباره ما", about_path,class: "nav-link" %>
-        </link_to>
+        </li>
       </ul>
+      <ul class="navbar navbar-nav ms-auto mb-2 mb-lg-0">
+        <% if Current.user %>
+        <li class="nav-item">
+          <span class="navbar-text"><%= Current.user.email %></span>
+        </li>
+        <li class="nav-item" style="font-family:cursive">
+          <%= button_to "خروج", logout_path, method: :delete, class: "btn btn-sm btn-outline-secondary" %>
+        </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to "ورود", sign_in_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to "ثبت نام", sign_up_path, class: "nav-link" %>
+        </li>
+        <% end %>
+      </ul>
+
     </div>
   </div>
 </nav>
