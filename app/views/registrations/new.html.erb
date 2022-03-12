@@ -1,9 +1,9 @@
 <h1>ثبت نام</h1>
 
 <%= form_with model: @user, url: sign_up_path,data: { turbo: false } do |form| %>
-    <% if @user.errors.any? %>
+     <% if form.object.errors.any? %>
         <div class="alert alert-danger">
-            <% @user.errors.full_messages.each do |message| %>
+            <% form.object.errors.full_messages.each do |message| %>
                 <div><%= message %></div>
             <% end %>
         </div>

@@ -1,0 +1,18 @@
+<h1>بازنشانی رمز ورود</h1>
+
+<%= form_with model: @user, url: password_reset_edit_path(token: params[:token]) do |form| %>
+
+   <div class="mb-3">
+        <%= form.label :"رمز ورود" %>    
+        <%= form.password_field :password, class: "form-control", placeholder: "رمز ورود" %>
+    </div >
+    
+    <div class="mb-3">
+        <%= form.label :"تکرار رمز ورود" %>
+        <%= form.password_field :password_confirmation, class: "form-control", placeholder: "رمز ورود" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "بازنشانی رمز عبور" , class:"btn btn-primary" %>
+    </div>
+<% end %>

@@ -1,0 +1,13 @@
+<h1>رمز عبور خود را فراموش کرده اید؟</h1>
+
+<%= form_with url: password_reset_path do |form| %>
+
+    <div class="mb-3">
+        <%= form.label :ایمیل %>
+        <%= form.text_field :email, class: "form-control", placeholder: "shop@example.com" %>
+    </div>
+
+    <div class="mb-3">
+        <%= form.submit "بازنشانی رمز عبور" , class:"btn btn-primary" %>
+    </div>
+<% end %>
