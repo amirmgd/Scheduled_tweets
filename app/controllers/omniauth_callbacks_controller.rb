@@ -1,5 +1,5 @@
 class OmniauthCallbacksController < ApplicationController
     def twitter
-        flash:[:alert] = "success!"
+        redirect_to sign_in_path
     end
 end
