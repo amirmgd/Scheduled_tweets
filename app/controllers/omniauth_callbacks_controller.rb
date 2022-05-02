@@ -1,5 +1,5 @@
 class OmniauthCallbacksController < ApplicationController
     def twitter
-        notice: "success!"
+        flash:[:alert] = "success!"
     end
 end
