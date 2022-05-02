@@ -1,5 +1,5 @@
 class omniauthCallbacksController < AboutController
     def twitter
-        render plain: "عملیات با موفقیت انجام شد!"
+        render plain: "duccess!"
     end
 end
