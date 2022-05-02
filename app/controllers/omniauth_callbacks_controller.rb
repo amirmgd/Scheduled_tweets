@@ -1,5 +1,5 @@
 class OmniauthCallbacksController < AboutController
     def twitter
-        render plain: "duccess!"
+        redirect_to root_path, notice:  "success!"
     end
 end
