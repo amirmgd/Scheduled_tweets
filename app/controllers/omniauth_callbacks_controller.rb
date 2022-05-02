@@ -1,5 +1,5 @@
 class OmniauthCallbacksController < ApplicationController
     def twitter
-        redirect_to sign_in_path
+        render plain: "success!"
     end
 end
