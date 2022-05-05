@@ -2,5 +2,5 @@ OmniAuth.config.allowed_request_methods = [:post, :get]
 OmniAuth.config.silence_get_warning = true
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-    provider :twitter, ENV['consumer_key'], ENV['consumer_secret']
+    provider :twitter, Rails.application.credentials.dig(:twitter, :consumer_key), Rails.application.credentials.dig(:twitter, :consumer_secret)
 end
